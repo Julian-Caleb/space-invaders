@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Invaders : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class Invaders : MonoBehaviour
 
     public float spacing = 35.0f; // Add new variable spacing
     public AnimationCurve speed;
+
+    public Text MyscoreText;
+    private int score = -100;
 
     public Projectile missilePrefab;
     public float missileAttackRate = 1.0f;
@@ -94,12 +98,20 @@ public class Invaders : MonoBehaviour
             this.columns++;
         }
 
+        if (this.rows==4 && this.columns==3) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        }
+
         Vector3 position = this.transform.position;
         position.y = 3.759784f;
         position.x = 0f;
         this.transform.position = position;
 
         this.amountKilled = 0;
+
+        score = score + 100;
+        MyscoreText.text = "Score : " + score;
+
     }
 
     private void MissileAttack() {

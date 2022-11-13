@@ -41,8 +41,10 @@ public class Invader : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Laser")) {
+
             this.killed.Invoke();
             this.gameObject.SetActive(false);
+
         }
 
     }
