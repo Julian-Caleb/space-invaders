@@ -94,6 +94,11 @@ public class Invaders : MonoBehaviour
             this.columns++;
         }
 
+        Vector3 position = this.transform.position;
+        position.y = 3.759784f;
+        position.x = 0f;
+        this.transform.position = position;
+
         this.amountKilled = 0;
     }
 
