@@ -6,8 +6,8 @@ public class Invaders : MonoBehaviour
     
     public Invader[] prefabs;
     
-    public int rows = 5;
-    public int columns = 11;
+    public int rows = 1;
+    public int columns = 2;
 
     public float spacing = 35.0f; // Add new variable spacing
     public AnimationCurve speed;
@@ -24,6 +24,8 @@ public class Invaders : MonoBehaviour
     private Vector3 _direction = Vector2.right;
 
     private void Awake() {
+
+        Reset();
 
         for (int row = 0; row < this.rows; row++) {
             
@@ -83,6 +85,18 @@ public class Invaders : MonoBehaviour
 
     }
 
+    private void Reset() {
+
+        if (this.columns==5) {
+            this.rows++;
+            this.columns = 3;
+        } else {
+            this.columns++;
+        }
+
+        this.amountKilled = 0;
+    }
+
     private void MissileAttack() {
 
         foreach (Transform invader in this.transform) {
@@ -105,7 +119,7 @@ public class Invaders : MonoBehaviour
         this.amountKilled++;
 
         if (this.amountKilled >= this.totalInvaders) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Awake();
         }
 
     }

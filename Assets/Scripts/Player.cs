@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     
     public Projectile laserPrefab;
 
-    public float speed = 5.0f;
+    public float speed = 7.0f;
 
     private bool _laserActive;
 
@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         
         if (other.gameObject.layer == LayerMask.NameToLayer("Invader") || other.gameObject.layer == LayerMask.NameToLayer("Missile") )
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
 }

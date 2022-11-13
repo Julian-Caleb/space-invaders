@@ -564,7 +564,7 @@ MonoBehaviour:
   - {fileID: 6892478756738345896, guid: 89a9ff939dd6d7a48a5186e36f56c001, type: 3}
   - {fileID: 8733587441076943733, guid: ace53b0bdcac21544b387a0d07048154, type: 3}
   rows: 1
-  columns: 5
+  columns: 2
   spacing: 50
   speed:
     serializedVersion: 2
@@ -1069,8 +1069,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 1080
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 550, y: 100}
   m_ScreenMatchMode: 0
