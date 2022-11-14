@@ -15,6 +15,7 @@ public class Invaders : MonoBehaviour
 
     public Text MyscoreText;
     private int score = -100;
+    private int wave = -1;
 
     public Projectile missilePrefab;
     public float missileAttackRate = 1.0f;
@@ -110,7 +111,8 @@ public class Invaders : MonoBehaviour
         this.amountKilled = 0;
 
         score = score + 100;
-        MyscoreText.text = "Score : " + score;
+        wave = wave + 1;
+        MyscoreText.text = "Wave " + wave + " - Score: " + score;
 
     }
 
