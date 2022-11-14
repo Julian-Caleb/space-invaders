@@ -112,8 +112,7 @@ public class Invaders : MonoBehaviour
 
         score = score + 100;
         wave = wave + 1;
-        MyscoreText.text = "Wave " + wave + " - Score: " + score;
-
+        MyscoreText.text = "Wave " + wave + " - Score : " + score;
     }
 
     private void MissileAttack() {
