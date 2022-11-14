@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     
     public Projectile laserPrefab;
 
-    public float speed = 7.0f;
+    public float speed = 15.0f;
 
     private bool _laserActive;
 
