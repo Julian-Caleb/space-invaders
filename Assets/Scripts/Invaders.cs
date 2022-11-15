@@ -100,7 +100,7 @@ public class Invaders : MonoBehaviour
         }
 
         if (this.rows==4 && this.columns==3) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
         }
 
         Vector3 position = this.transform.position;

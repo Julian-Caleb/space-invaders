@@ -7,11 +7,13 @@ public class BossFight : MonoBehaviour
     
     public Boss[] prefabs;
     
+    public bool time = false;
+
     public int rows = 1;
     public int columns = 1;
 
     public float spacing = 35.0f; // Add new variable spacing
-    public float speed = 10;
+    public float speed = 0.1f;
 
     public Projectile missilePrefab;
     public float missileAttackRate = 1.0f;
@@ -51,12 +53,12 @@ public class BossFight : MonoBehaviour
     private void Start() {
 
         InvokeRepeating(nameof(MissileAttack), this.missileAttackRate, this.missileAttackRate);
-
     }
 
     private void Update() {
 
-        this.transform.position += _direction * (this.speed/5) * Time.deltaTime;
+        this.transform.position += _direction * (this.speed) * Time.deltaTime;
+        speed = speed + 0.0001f;
 
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
@@ -114,7 +116,7 @@ public class BossFight : MonoBehaviour
 
     private void InvaderKilled() {
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-5);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
 
     }
 
