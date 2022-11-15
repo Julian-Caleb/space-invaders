@@ -47,7 +47,7 @@ public class Boss : MonoBehaviour {
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Laser")) {
 
-            hp = hp - 200;
+            hp = hp - 20;
             
             if (hp == 0) {
                 this.killed.Invoke();
