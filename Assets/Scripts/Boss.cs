@@ -14,6 +14,7 @@ public class Boss : MonoBehaviour {
     private int _animationFrame; 
 
     private int hp = 1000;
+    private int score;
 
     public Text MyscoreText;
 
@@ -26,6 +27,8 @@ public class Boss : MonoBehaviour {
     private void Start() {
 
         InvokeRepeating(nameof(AnimateSprite), this.animationTime, this.animationTime); // repeating invoke
+        PlayerPrefs.SetInt("hp", hp);
+        score = PlayerPrefs.GetInt("score");
 
     }
 
@@ -48,7 +51,14 @@ public class Boss : MonoBehaviour {
         if (other.gameObject.layer == LayerMask.NameToLayer("Laser")) {
 
             hp = hp - 20;
-            
+            score = score + 100;
+            PlayerPrefs.SetInt("hp", hp);
+            PlayerPrefs.SetInt("currentscore", score);
+
+            if (score > PlayerPrefs.GetInt("highscore")) {
+                PlayerPrefs.SetInt("highscore", score);
+            }
+
             if (hp == 0) {
                 this.killed.Invoke();
                 this.gameObject.SetActive(false);

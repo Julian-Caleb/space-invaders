@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class BossFight : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class BossFight : MonoBehaviour
 
     public Projectile missilePrefab;
     public float missileAttackRate = 1.0f;
+
+    public TextMeshProUGUI HPText;
+    public TextMeshProUGUI ScoreText;
 
     public int totalInvaders => this.rows * this.columns;
     public int amountKilled { get; private set; }
@@ -53,6 +57,7 @@ public class BossFight : MonoBehaviour
     private void Start() {
 
         InvokeRepeating(nameof(MissileAttack), this.missileAttackRate, this.missileAttackRate);
+        HPText.text = "HP : " + PlayerPrefs.GetInt("hp");
     }
 
     private void Update() {
@@ -75,6 +80,10 @@ public class BossFight : MonoBehaviour
                 AdvanceRow();
             }
         }
+
+        HPText.text = "HP : " + PlayerPrefs.GetInt("hp");
+        ScoreText.text = "Score : " + PlayerPrefs.GetInt("currentscore");
+        
     }
 
     private void Reset() {

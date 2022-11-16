@@ -13,14 +13,15 @@ public class Invaders : MonoBehaviour
     public float spacing = 35.0f; // Add new variable spacing
     public AnimationCurve speed;
 
-    public Text MyscoreText;
-    private int score = -100;
+    public Text waveText;
+    public Text scoreText;
     private int wave = -1;
 
     public Projectile missilePrefab;
     public float missileAttackRate = 1.0f;
 
     public int amountKilled { get; private set; }
+    public int totalKilled = 0;
     public int amountAlive => this.totalInvaders - this.amountKilled;
 
     public int totalInvaders => this.rows * this.columns;
@@ -110,9 +111,9 @@ public class Invaders : MonoBehaviour
 
         this.amountKilled = 0;
 
-        score = score + 100;
         wave = wave + 1;
-        MyscoreText.text = "Wave " + wave + " - Score : " + score;
+        waveText.text = "Wave " + wave;
+        
     }
 
     private void MissileAttack() {
@@ -135,6 +136,14 @@ public class Invaders : MonoBehaviour
     private void InvaderKilled() {
 
         this.amountKilled++;
+        totalKilled = totalKilled + 100;
+
+        scoreText.text = "Score : " + totalKilled;
+        PlayerPrefs.SetInt("currentscore", totalKilled);
+
+        if (totalKilled > PlayerPrefs.GetInt("highscore")) {
+            PlayerPrefs.SetInt("highscore", totalKilled);
+        }
 
         if (this.amountKilled >= this.totalInvaders) {
             Awake();
