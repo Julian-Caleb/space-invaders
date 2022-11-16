@@ -15,7 +15,7 @@ public class Invaders : MonoBehaviour
 
     public Text waveText;
     public Text scoreText;
-    private int wave = -1;
+    private int wave = 0;
 
     public Projectile missilePrefab;
     public float missileAttackRate = 1.0f;
