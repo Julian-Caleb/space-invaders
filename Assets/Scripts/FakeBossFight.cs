@@ -3,10 +3,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
-public class BossFight : MonoBehaviour
+public class FakeBossFight : MonoBehaviour
 {
     
-    public Boss[] prefabs;
+    public FakeBoss[] prefabs;
 
     public int rows = 1;
     public int columns = 1;
@@ -41,7 +41,7 @@ public class BossFight : MonoBehaviour
 
             for (int col = 0; col < this.columns; col++) {
 
-                Boss invader = Instantiate(this.prefabs[row], this.transform);
+                FakeBoss invader = Instantiate(this.prefabs[row], this.transform);
                 invader.killed += InvaderKilled;
 
                 Vector3 position = rowPosition;

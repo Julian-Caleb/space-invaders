@@ -43,11 +43,25 @@ public class MainMenu : MonoBehaviour {
 
     }
 
-    // You Win
+    // Game Over Three wtf
 
     public void MenuThree() {
 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-9);
+
+    }
+
+    public void RetryThree() {
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-7);
+
+    }
+
+    // You Win
+
+    public void MenuFour() {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-10);
 
     }
 

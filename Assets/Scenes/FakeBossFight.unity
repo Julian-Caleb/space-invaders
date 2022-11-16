@@ -537,7 +537,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &596220105
 GameObject:
@@ -713,16 +713,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 740562156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4383d40cc0926f8478da59f7f3e284a4, type: 3}
+  m_Script: {fileID: 11500000, guid: c4182593990688e4eae4ab9994211e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 6327902700769495787, guid: 4af0d850510587543a742fa46b9ebf75, type: 3}
+  - {fileID: -7147055878141526343, guid: 335986104065042499cb1746cd4b1ef1, type: 3}
   rows: 1
   columns: 1
   spacing: 35
-  speed: 3
-  missilePrefab: {fileID: 7834122746297629734, guid: b36fb76cd7c24d9438433d8d96003142, type: 3}
+  speed: 1.5
+  missilePrefab: {fileID: 7834122746297629734, guid: 0c9bc71c0e07c8f46a8185e1c813f5ba, type: 3}
   missileAttackRate: 0.5
   HPText: {fileID: 1812769634}
   ScoreText: {fileID: 1851623972}
@@ -1236,7 +1236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2475561563200640858, guid: 67ee10754fd8a704688211109261e6d6, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2475561563200640858, guid: 67ee10754fd8a704688211109261e6d6, type: 3}
       propertyPath: m_LocalPosition.x

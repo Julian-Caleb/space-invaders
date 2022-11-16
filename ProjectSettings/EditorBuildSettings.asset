@@ -21,11 +21,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Caution.unity
     guid: 18563fd725dd07645a4d7c67d545dd29
   - enabled: 1
-    path: Assets/Scenes/BossFight.unity
-    guid: 5c048700067ce0f459cc2b9ce839c72d
+    path: Assets/Scenes/FakeBossFight.unity
+    guid: 6e3e9a2cf1c7a0d498b966b5ca436620
   - enabled: 1
     path: Assets/Scenes/GameOver 1.unity
     guid: 775e4cd61f0f36040a062e073db4401c
+  - enabled: 1
+    path: Assets/Scenes/Caution 1.unity
+    guid: 61d336f29289dc94c823e21431e99421
+  - enabled: 1
+    path: Assets/Scenes/BossFight.unity
+    guid: 5c048700067ce0f459cc2b9ce839c72d
+  - enabled: 1
+    path: Assets/Scenes/GameOver 2.unity
+    guid: b8126aabafe7a6e44b76790c81d38999
   - enabled: 1
     path: Assets/Scenes/YouWin.unity
     guid: 0f2025832a041024989fddc93dabb911
