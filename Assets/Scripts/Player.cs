@@ -10,6 +10,23 @@ public class Player : MonoBehaviour
 
     private bool _laserActive;
 
+    public Sprite[] animationSprites; // Array of sprites
+    public float animationTime = 1.0f; // Animation time
+    private int _animationFrame;
+    private SpriteRenderer _spriteRenderer;
+
+    private void Awake() {
+
+        _spriteRenderer = GetComponent<SpriteRenderer>(); // take sprites
+
+    }
+
+    private void Start() {
+
+        InvokeRepeating(nameof(AnimateSprite), this.animationTime, this.animationTime); // repeating invoke
+
+    }
+
     private void Update() {
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
@@ -43,6 +60,20 @@ public class Player : MonoBehaviour
         
         if (other.gameObject.layer == LayerMask.NameToLayer("Invader") || other.gameObject.layer == LayerMask.NameToLayer("Missile") )
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
+
+    private void AnimateSprite() {
+
+        _animationFrame++;
+
+        if (_animationFrame >= this.animationSprites.Length) {
+
+            _animationFrame = 0;
+
+        }
+
+        _spriteRenderer.sprite = this.animationSprites[_animationFrame];
+
     }
 
 }

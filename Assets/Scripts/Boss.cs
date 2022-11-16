@@ -28,7 +28,7 @@ public class Boss : MonoBehaviour {
 
         InvokeRepeating(nameof(AnimateSprite), this.animationTime, this.animationTime); // repeating invoke
         PlayerPrefs.SetInt("hp", hp);
-        score = PlayerPrefs.GetInt("score");
+        score = PlayerPrefs.GetInt("currentscore");
 
     }
 

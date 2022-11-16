@@ -3,14 +3,11 @@ using UnityEngine;
 public class Invader : MonoBehaviour {
    
     public Sprite[] animationSprites; // Array of sprites
+    public float animationTime = 0.5f; // Animation time
+    private int _animationFrame;
+    private SpriteRenderer _spriteRenderer;
 
-    public float animationTime = 1.0f; // Animation time
-
-    public System.Action killed;
-
-    private SpriteRenderer _spriteRenderer; 
-
-    private int _animationFrame; 
+    public System.Action killed;  
 
     private void Awake() {
 
