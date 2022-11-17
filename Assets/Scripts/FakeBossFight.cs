@@ -10,6 +10,9 @@ public class FakeBossFight : MonoBehaviour
 
     public int rows = 1;
     public int columns = 1;
+    
+    private float timer;
+    private int timescore;
 
     public float spacing = 35.0f; // Add new variable spacing
     public float speed = 0.1f;
@@ -79,8 +82,18 @@ public class FakeBossFight : MonoBehaviour
             }
         }
 
+        timer += Time.deltaTime;
+
+        if (timer > 4f) {
+
+            timescore += 10;
+            
+            //Reset the timer to 0.
+            timer = 0;
+        }
+
         HPText.text = "HP : " + PlayerPrefs.GetInt("hp");
-        ScoreText.text = "Score : " + PlayerPrefs.GetInt("currentscore");
+        ScoreText.text = "Score : " + (PlayerPrefs.GetInt("currentscore")-timescore);
         
     }
 

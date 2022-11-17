@@ -10,6 +10,9 @@ public class Invaders : MonoBehaviour
     public int rows = 1;
     public int columns = 2;
 
+    private float timer;
+    private int timescore;
+
     public float spacing = 35.0f; // Add new variable spacing
     public AnimationCurve speed;
 
@@ -79,6 +82,16 @@ public class Invaders : MonoBehaviour
                 AdvanceRow();
             }
         }
+
+        timer += Time.deltaTime;
+
+        if (timer > 4f) {
+
+            timescore += 10;
+            
+            //Reset the timer to 0.
+            timer = 0;
+        }
     }
 
     private void AdvanceRow() {
@@ -138,11 +151,12 @@ public class Invaders : MonoBehaviour
         this.amountKilled++;
         totalKilled = totalKilled + 100;
 
-        scoreText.text = "Score : " + totalKilled;
-        PlayerPrefs.SetInt("currentscore", totalKilled);
+        //timescore = score berkurang tiap interval waktu; refer to Update()
+        scoreText.text = "Score : " + (totalKilled-timescore);
+        PlayerPrefs.SetInt("currentscore", (totalKilled-timescore));
 
         if (totalKilled > PlayerPrefs.GetInt("highscore")) {
-            PlayerPrefs.SetInt("highscore", totalKilled);
+            PlayerPrefs.SetInt("highscore", (totalKilled-timescore));
         }
 
         if (this.amountKilled >= this.totalInvaders) {
