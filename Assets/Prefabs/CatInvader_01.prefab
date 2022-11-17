@@ -128,5 +128,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 248483d23507fbd4d9368d73d51c5138, type: 3}
   - {fileID: 21300000, guid: 75c31ec5fae0986439664430fd2f22c5, type: 3}
   animationTime: 1
-  MyscoreText: {fileID: 0}
-  score: 0
