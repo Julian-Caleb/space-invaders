@@ -113,7 +113,7 @@ public class Invaders : MonoBehaviour
             this.columns++;
         }
 
-        if (this.rows==6 && this.columns==3) {
+        if (this.rows==2 && this.columns==3) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
         }
 

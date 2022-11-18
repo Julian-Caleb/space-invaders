@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
@@ -10,6 +11,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     public string stopAtScene;
+    
+    public bool loop;
 
     IEnumerator Start()
     {
@@ -18,8 +21,11 @@ public class AudioManager : MonoBehaviour
         audio.Play();
         yield return new WaitForSeconds(audio.clip.length);
         audio.clip = otherClip;
+        audio.loop = loop;
         audio.Play();
     }
+
+
 
     void Awake() {
 
@@ -38,7 +44,7 @@ public class AudioManager : MonoBehaviour
 
     void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
     {
-        if (scene.name == stopAtScene)
+        if (scene.name == stopAtScene || scene.name == "GameOver 2")
         {
             Destroy(gameObject);
             Debug.Log("The music stopped!");
